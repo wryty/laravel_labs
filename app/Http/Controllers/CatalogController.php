@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-
+use Illuminate\View\View;
+use Illuminate\Support\Collection;
 class CatalogController extends Controller
 {
     private $jsonFilePath = 'products.json';
 
-    public function index(Request $request)
+    public function index(Request $request) : View
     {
         $products = $this->getProducts();
 
@@ -21,14 +22,14 @@ class CatalogController extends Controller
         return view('catalog.index', compact('products'));
     }
 
-    public function show(Request $request)
+    public function show(Request $request) : View
     {
         $productData = json_decode($request->input('product'), true);
         $product = new Product($productData);
 
         return view('catalog.show', compact('product'));
     }
-    private function getProducts()
+    private function getProducts() : Collection
     {
         if (!file_exists($this->jsonFilePath)) {
             file_put_contents($this->jsonFilePath, json_encode([]));
@@ -44,7 +45,7 @@ class CatalogController extends Controller
     }
 
 
-    private function searchProducts($products, $field, $value)
+    private function searchProducts($products, $field, $value) : bool
     {
         return $products->filter(function ($product) use ($field, $value) {
             $keywords = explode(' ', mb_strtolower($value, 'UTF-8'));

@@ -16,10 +16,9 @@ class IncrementViews
      */
     public function handle($request, Closure $next)
     {
-        $articleId = $request->route('id');
+        $article = $request->route('article');
 
-        if ($articleId) {
-            $article = Article::findOrFail($articleId);
+        if ($article) {
             $article->increment('views');
         }
 
