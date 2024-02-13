@@ -1,0 +1,128 @@
+[
+    {
+        "name": "Кружка",
+        "price": 500,
+        "image": "image1.jpg",
+        "description": "Хорошая кружка",
+        "quantity": 30
+    },
+    {
+        "name": "Мячик",
+        "price": 1500,
+        "image": "image1.jpg",
+        "description": "Футбольный мячик",
+        "quantity": 50
+    },
+    {
+        "name": "Ручка",
+        "price": 200,
+        "image": "image1.jpg",
+        "description": "Хорошая ручка",
+        "quantity": 0
+    },
+    {
+        "name": "Ноутбук",
+        "price": 1500,
+        "image": "image1.jpg",
+        "description": "Мощный ноутбук",
+        "quantity": 15
+    },
+    {
+        "name": "Телефон",
+        "price": 1000,
+        "image": "image1.jpg",
+        "description": "Современный смартфон",
+        "quantity": 25
+    },
+    {
+        "name": "Фотоаппарат",
+        "price": 800,
+        "image": "image1.jpg",
+        "description": "Профессиональный фотоаппарат",
+        "quantity": 10
+    },
+    {
+        "name": "Книга",
+        "price": 30,
+        "image": "image1.jpg",
+        "description": "Увлекательная книга",
+        "quantity": 40
+    },
+    {
+        "name": "Стул",
+        "price": 120,
+        "image": "image1.jpg",
+        "description": "Удобный стул",
+        "quantity": 0
+    },
+    {
+        "name": "Стол",
+        "price": 300,
+        "image": "image1.jpg",
+        "description": "Прочный стол",
+        "quantity": 10
+    },
+    {
+        "name": "Спортивные кроссовки",
+        "price": 80,
+        "image": "image1.jpg",
+        "description": "Комфортные кроссовки",
+        "quantity": 35
+    },
+    {
+        "name": "Футболка",
+        "price": 15,
+        "image": "image1.jpg",
+        "description": "Легкая футболка",
+        "quantity": 60
+    },
+    {
+        "name": "Шорты",
+        "price": 25,
+        "image": "image1.jpg",
+        "description": "Удобные шорты",
+        "quantity": 45
+    },
+    {
+        "name": "Пижама",
+        "price": 40,
+        "image": "image1.jpg",
+        "description": "Мягкая пижама",
+        "quantity": 18
+    },
+    {
+        "name": "Планшет",
+        "price": 250,
+        "image": "image1.jpg",
+        "description": "Современный планшет",
+        "quantity": 8
+    },
+    {
+        "name": "Велосипед",
+        "price": 300,
+        "image": "image1.jpg",
+        "description": "Спортивный велосипед",
+        "quantity": 5
+    },
+	{
+        "name": "Клавиатура",
+        "price": 300,
+        "image": "image1.jpg",
+        "description": "Шикарная клавиатура",
+        "quantity": 0
+    },
+    {
+        "name": "Шарф",
+        "price": 300,
+        "image": "image1.jpg",
+        "description": "Теплый зимний шарф",
+        "quantity": 5
+    },
+    {
+        "name": "Машина",
+        "price": 300,
+        "image": "image1.jpg",
+        "description": "Спорткар",
+        "quantity": 0
+    }
+]
