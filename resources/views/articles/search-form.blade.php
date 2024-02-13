@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <form action="{{ route('articles.search') }}" method="get" class="mb-4">
+    <form action="{{ route('articles.index') }}" method="get" class="mb-4">
         <div class="input-group">
             <input type="text" class="form-control" name="search" placeholder="Search by title">
             <div class="input-group-append">

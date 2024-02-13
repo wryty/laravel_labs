@@ -7,24 +7,9 @@ use App\Models\Article;
 use Illuminate\View\View;
 class ArticleController extends Controller
 {
-    public function index() : View
+    public function index(Request $request) : View
     {
-        return view('articles.index', ['articles' => Article::cursorPaginate(2)]);
-    }
 
-    public function show(Article $article) : View
-    {
-        return view('articles.show', ['article' => $article]);
-    }
-
-    public function approve(Article $article)
-    {
-        $article->update(['approved' => !$article->approved]);
-        return redirect()->route('articles.index');
-    }
-
-    public function search(Request $request) : View
-    {
         $search = $request->input('search');
         $criteria = $request->input('criteria');
 
@@ -48,5 +33,15 @@ class ArticleController extends Controller
         return view('articles.index', compact('articles'));
     }
 
+    public function show(Article $article) : View
+    {
+        return view('articles.show', ['article' => $article]);
+    }
+
+    public function approve(Article $article)
+    {
+        $article->update(['approved' => !$article->approved]);
+        return redirect()->route('articles.index');
+    }
     
 }

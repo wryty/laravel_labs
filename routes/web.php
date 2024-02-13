@@ -26,4 +26,3 @@ Route::get('/catalog/show', [CatalogController::class, 'show'])->name('show-prod
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show')->middleware('views');
 Route::post('/articles/{article}/approve', [ArticleController::class, 'approve'])->name('articles.approve');
-Route::get('/articles/search', [ArticleController::class, 'search'])->name('articles.search');
