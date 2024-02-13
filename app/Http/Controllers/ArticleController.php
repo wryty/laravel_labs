@@ -42,7 +42,8 @@ class ArticleController extends Controller
             $query->where('approved', $criteria === 'approved' ? '1' : '0');
         }
 
-        $articles = $query->orderBy('created_at', 'desc')->paginate(10);
+        $articles = $query->orderBy('created_at', 'desc')->cursorPaginate(2);
+        
 
         return view('articles.index', compact('articles'));
     }
