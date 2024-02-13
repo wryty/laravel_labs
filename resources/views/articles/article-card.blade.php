@@ -8,7 +8,7 @@
         </div>
         <div class="card-footer">
             Views: {{ $article->views }}
-            <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary btn-sm float-right">Read more</a>
+            <a href="{{ route('articles.show', $article) }}" class="btn btn-primary btn-sm float-right">Read more</a>
 
             @include('articles.approve-button', ['article' => $article])
         </div>
