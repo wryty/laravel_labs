@@ -1,15 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
-@include('articles.search-form')
+<a href="{{ route('articles.create') }}" class="btn btn-primary btn-sm float-right">Create article</a>
+@foreach ($countries as $country)
     <div class="container">
-        <div class="row">
-            @foreach ($articles as $article)
-                @include('articles.article-card', ['article' => $article])
-            @endforeach
-        </div>
-        <div class="d-flex justify-content-center">
-            {{ $articles->links() }}
-        </div>
+        <p>Country: {{ $country->country }}</p>
+        @foreach ($country->users as $user)
+            <p>User: {{ $user->name }}</p>
+            <div class="row">
+                @foreach ($user->articles as $article)
+                    @include('articles.article-card', ['article' => $article])
+                @endforeach
+            </div>
+
+        @endforeach
     </div>
+@endforeach
 @endsection

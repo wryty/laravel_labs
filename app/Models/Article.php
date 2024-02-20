@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use PharIo\Manifest\Author;
 
 class Article extends Model
 {
@@ -16,5 +16,16 @@ class Article extends Model
         'description',
         'views',
         'approved',
+        'user_id'
     ];
+    public function author()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(User::class);
+    }
+    
 }

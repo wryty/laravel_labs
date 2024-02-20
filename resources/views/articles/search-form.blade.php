@@ -12,7 +12,6 @@
             <select name="criteria" id="criteria" class="form-control">
                 <option value="views">Views</option>
                 <option value="approved">Approved</option>
-                <option value="disapproved">Disapproved</option>
                 <option value="">Title</option>
             </select>
         </div>

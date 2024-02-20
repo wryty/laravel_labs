@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
     <div class="container">
@@ -15,6 +15,9 @@
                     Approved: {{ $article->approved ? 'Yes' : 'No' }}
                 </span>
             </div>
+            @foreach ($article->likes as $user)
+                <p>{{$user->email}} - Like</p>
+            @endforeach
         </div>
     </div>
 @endsection

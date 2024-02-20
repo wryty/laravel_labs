@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Laravel Blog</title>
-    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-</head>
-<body>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Your Blog</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route('articles.index') }}">Home</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-<div class="container mt-4">
-    @yield('content')
-</div>
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            @include('layouts.navigation')
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js" integrity="sha384-2EEq9D2vF6yG7M9FeN8gZ7q3zHAODJTM6B9x1kgw2b2SPcXntRVVAY5oU1v8SZZ" crossorigin="anonymous"></script>
-<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-</body>
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+    </body>
 </html>
