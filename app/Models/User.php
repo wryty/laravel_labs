@@ -50,4 +50,20 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+
+    public function roles() 
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function isAdmin() 
+    {
+        foreach ($this->roles as $role) 
+        {
+            if ($role->name == 'Admin') {
+                return true;
+            }
+        }
+        return false;
+    }
 }

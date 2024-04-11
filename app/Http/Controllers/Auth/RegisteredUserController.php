@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Role;
 
 class RegisteredUserController extends Controller
 {
@@ -42,6 +43,9 @@ class RegisteredUserController extends Controller
             'patronymic' => $request->patronymic,
             'password' => Hash::make($request->password)
         ]);
+
+        $memberRole = Role::where('name', 'Member')->first();
+        $user->roles()->attach($memberRole);
 
         event(new Registered($user));
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Laravel Blog</title>
+    <title>Laravel labs</title>
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
 </head>
@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('articles.index') }}">Home</a>
+                <a class="nav-link" href="{{ route('dashboard') }}">Home</a>
             </li>
         </ul>
     </div>
