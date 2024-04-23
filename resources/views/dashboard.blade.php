@@ -1,3 +1,7 @@
+@php
+    use App\Enums\UserRole;
+@endphp
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -15,6 +19,7 @@
                         <img src={{ asset('image1.jpg') }} alt="Image" style="width: 100px; height: 100px"> 
                         @if(Auth::user()->isAdmin())
                             <a href="{{ route('users.index') }}" class="btn btn-primary" style="color: black">Manage Users</a>
+                            <p>{{ config('roles')['ADMIN'] }}</p>
                         @endif
                     </div>
                 </div>
